@@ -1,0 +1,626 @@
+@charset "utf-8";
+
+@media screen and (min-width: 800px) {
+    .container {
+      margin: 1em 2em;
+    }
+  }
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    border: 1px solid #fff;
+    background: #333;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+}
+
+
+/*Header*/
+.primary-header {
+    width: 100vw;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.mobile-nav-toggle{
+    display: none;
+}
+
+/*Social Media*/
+.primary-header .sns {
+    width: fit-content;
+}
+.primary-header .sns a {
+    font-size: 25px;
+    color: white;
+    mix-blend-mode: difference;
+    padding: 1rem;
+}
+
+/*menu*/
+.primary-navigation {
+    list-style: none;
+    padding: 0;
+    background: hsl(0 0% 0% / 0)
+}
+
+.primary-navigation li {
+    display: inline-flex;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.primary-navigation a {
+    text-decoration: none;
+    color: white;
+    mix-blend-mode: difference;
+    font-family: "libre barcode 39 Text";
+    font-size: 50px
+}
+
+.primary-navigation a:hover {
+    font-weight: 800;
+}
+
+@media (max-width: 35em) {
+    .primary-navigation {
+        position: fixed;
+        inset: 0 0 0 30%;
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2em;
+        background: hsl(0 0% 100% / 0.1);
+        backdrop-filter: blur(1rem);
+        z-index: 1000;
+
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+
+    .primary-navigation[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    .primary-navigation a {
+        font: normal calc(20px + 1.5vw) "raleway";
+        color: #fff;
+        mix-blend-mode: difference;
+        padding-right: 30px;
+        padding-bottom: 30px;
+    }
+
+    .primary-header a:hover {
+        color: rgb(25, 154, 209);
+        background: none;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        background: url(../icon/menu.png);
+        background-repeat: no-repeat;
+        width: 3rem;
+        border: 0;
+        aspect-ratio: 1;
+        top: 1.5rem;
+        right: 2rem;
+        cursor: pointer;
+    }
+}
+
+
+
+/*footer*/
+.credit {
+    position: fixed;
+    top: 94vh;
+    left: 1%;
+    font: normal 16px "dosis" ;
+    color: white;
+    mix-blend-mode: difference;
+    z-index: -1;
+}
+
+/*Index*/
+main figure video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -2;
+  }
+
+.popup {
+    height: fit-content;
+    position: relative;
+    top: 20vh;
+    left: 3%;
+    display: inline-flex;
+    flex-direction: row;
+    cursor: pointer;
+    font: normal 80px "Noto Sans JP";
+    letter-spacing: 5px;
+    align-items: center;
+    color: #000;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.popup:hover {
+    color: #fff
+}
+
+.name2 {
+    padding-top: 30px;
+    padding-left: 10px;
+    font:normal 80px "Libre Barcode 39 Text";
+}
+.name {
+    font: normal 90px "East Sea Dokdo";
+    color: rgb(25, 154, 209);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.popup .popuptext {
+    visibility: hidden;
+    text-align: left;
+    position: sticky;
+    margin-left: 7vw;
+    z-index: 10;
+}
+
+.popuptext a {
+    font: normal 3vw "Libre Barcode 39 Text";
+    letter-spacing: 10px;
+    color: white;
+    mix-blend-mode: difference;
+}
+
+.popuptext #works {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.popuptext a:hover {
+    color: rgb(25, 154, 209);
+}
+
+.popup .show {
+    visibility: visible;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;
+        margin-left: 2vw;
+    }
+
+    to {opacity: 1;
+        margin-left: 7vw;
+    }
+}
+
+/*Bio Page*/
+
+.vid-bg video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0px;
+    right: 0;
+    top: -0px;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .bio-content {
+    width: 100vw;
+    margin-top: 5rem;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .bio-photo {
+    padding-top: 30px;
+  }
+
+  .bio-photo img {
+    width: 320px;
+    height: auto;
+  }
+
+  .bio-text {
+    width: 70vw;
+    height: 74vh;
+    position: sticky;
+    padding: 3vw;
+    color: #fff;
+    overflow-y: auto;
+  }
+
+
+  .bio-text h1 {
+    font: normal 35px "Noto Sans Jp";
+    padding-bottom: 50px;
+    letter-spacing: 5px;
+  }
+
+  .bio-text .edu {
+    font: bold 18px "montserrat";
+    color: #fff;
+    padding-bottom: 50px;
+    line-height: 1.5;
+  }
+
+  .bio-text .edu span{
+    font: normal 18px "montserrat";
+    color: #fff;
+    padding-left: 10px;
+  }
+
+  .bio-text p {
+    font: normal 15px "montserrat";
+    line-height: 1.5;
+  }
+
+  .bio-text p span {
+    font: normal 18px "Dosis";
+    color: orange;
+  }
+
+/* Works page*/
+
+.portfolio {
+    width: 98.9%;
+    height: 57rem;
+    display: inline-flex;
+    flex-direction: row;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+}
+    .portfolio .audio-list {
+        width: 40rem;
+        height: 100%;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .audio-list audio {
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    #playlist {
+        width: 100%;
+        height: 90%;
+        overflow-y: scroll;
+    }
+
+    #playlist h1 {
+        width: fit-content;
+        font: normal 28px "Noto Sans JP";
+        color: orange;
+        border-bottom: 1px solid white;
+        margin-bottom: 10px;
+    }
+
+    #playlist li a{
+        font: normal 24px "raleway";
+        color: #fff;
+        mix-blend-mode: difference;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #playlist li a:hover {
+        color: rgb(255, 204, 0);
+        font-weight: 800;
+    }
+
+    #playlist li span {
+        font: normal 18px "noto sans jp";
+        color: rgb(245, 245, 245);
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    #playlist li p {
+        font: normal 14px "noto sans jp";
+        padding-left: 40px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        letter-spacing: 2px;
+        line-height: 1.8;
+        color: #fff;
+        mix-blend-mode: difference;
+    }
+
+    #playlist iframe {
+        margin-left: 40px;
+        margin-bottom: 30px;
+    }
+
+    .portfolio .vid-list {
+        width: 48rem;
+        height: 100%;
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+    .vid-list h1 {
+        width: fit-content;
+        font: normal 28px "noto sans jp";
+        color: orange;
+        border-bottom: 1px solid white;
+        margin-bottom: 10px;
+    }
+
+    #vid-info .vid-title {
+        font: normal 24px "raleway";
+        color: #fff;
+        mix-blend-mode: difference;
+        margin-left: 20px;
+    }
+    .vid-title span {
+        font: normal 18px "noto sans jp";
+        color: rgb(245, 245, 245);
+        margin-left: 20px;
+    }
+
+    #vid-info p{
+        font: normal 14px "noto sans jp";
+        padding-left: 40px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        letter-spacing: 2px;
+        line-height: 1.8;
+        color: rgb(209, 209, 209);
+    }
+
+    #vid-info iframe {
+        margin-left: 40px;
+    }
+
+    /*Contact page*/
+
+    .contact-container {
+        width: 100vw;
+        margin-top: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid red;
+    }
+    
+
+ /*MOBILE VERSION*/
+  
+  @media (max-width: 64em) {
+    body {
+        overflow-x: hidden;
+    }
+        /*main page*/
+    .popup {
+        height: fit-content;
+        position: relative;
+        top: 30vh;
+        left: 3%;
+        display: inline-block;
+        cursor: pointer;
+        font: normal 50px "Noto Sans JP";
+        align-items: center;
+        color: #000;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    .popup:hover {
+        color: #fff
+    }
+    
+    .name2 {
+        padding-top: 30px;
+        padding-left: 10px;
+        font:normal 80px "Libre Barcode 39 Text";
+    }
+    .name {
+        font: normal 70px "East Sea Dokdo";
+        color: rgb(25, 154, 209);
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .popup .popuptext {
+        visibility: hidden;
+        text-align: right;
+        position: sticky;
+        z-index: 10;
+    }
+    
+    .popuptext a {
+        font: normal 5vw "Libre Barcode 39 Text";
+        letter-spacing: 10px;
+        color: white;
+        mix-blend-mode: difference;
+    }
+
+    .popuptext #about {
+        padding-top: 20px;
+        transform: rotate(0deg);
+    }
+    
+    .popuptext #works {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .popuptext #contact {
+        transform: rotate(0deg);
+    }
+    
+    
+    .popuptext a:hover {
+        color: rgb(25, 154, 209);
+    }
+    
+    .popup .show {
+        visibility: visible;
+        animation-name: fadeIn;
+        animation-duration: 1s;
+    }
+    
+    @keyframes fadeIn {
+        from {opacity: 0;
+            margin-right: -5vw;
+        }
+    
+        to {opacity: 1;
+            margin-right: 0vw;
+        }
+    }
+
+
+    /*mobile bio page*/
+    .bio-video figure video { 
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0px;
+        bottom: 0;
+        z-index: -1;
+      }
+
+      .bio-content {
+        width: 100vw;
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .bio-photo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+
+      .bio-text {
+        width: 90vw;
+        height: 74vh;
+        position: sticky;
+        top: 18vh;
+        left: 4.5vw;
+        padding: 2vw;
+        color: #fff;
+        border: 2px solid #fff;
+        overflow-y: auto;
+        backdrop-filter: blur(1rem);
+        margin-top: 50px;
+        margin-bottom: 80px;
+      }
+
+      .bio-text h1 {
+        font: normal 50px "Noto Sans JP";
+        padding-bottom: 30px;
+      }
+    
+      .bio-text .edu {
+        font: bold 25px "montserrat";
+        color: #fff;
+        padding-bottom: 50px;
+        line-height: 1.5;
+      }
+    
+      .bio-text .edu span{
+        font: normal 20px "montserrat";
+        color: #fff;
+        padding-left: 10px;
+      }
+    
+      .bio-text p {
+        font: normal 20px "montserrat";
+        line-height: 1.5;
+      }
+    
+      .bio-text p span {
+        font: normal 20px "Dosis";
+        color: orange;
+      }
+
+      .portfolio {
+        width: 98.9%;
+        height: 100%;
+        display: inline-flex;
+        flex-direction: column;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 20px;
+        overflow-y: auto;
+    }
+
+    .portfolio .audio-list {
+        width: 98%;
+        margin-bottom: 50px;
+    }
+
+    .portfolio .vid-list {
+        width: 98%;
+        overflow-y: auto;
+        margin-bottom: 50px;
+    }
+  }
