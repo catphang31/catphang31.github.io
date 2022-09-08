@@ -481,12 +481,13 @@ main figure video {
     .name2 {
         padding-top: 30px;
         padding-left: 10px;
+        padding-right: 100px
         font:normal 50px "Libre Barcode 39 Text";
     }
     .name {
         font: normal 60px "East Sea Dokdo";
         color: rgb(25, 154, 209);
-        padding-left: 60px;
+        padding-left: 20px;
         padding-right: 20px;
     }
     
