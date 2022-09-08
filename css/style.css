@@ -479,17 +479,15 @@ main figure video {
     }
     
     .name2 {
-        padding-top: 30px;
-        padding-left: 10px;
         font:normal 50px "Libre Barcode 39 Text";
     }
     .name {
         font: normal 60px "East Sea Dokdo";
         color: rgb(25, 154, 209);
-        padding-left: 20px;
-        padding-right: 20px;
-        line-break: auto;
+        padding-left: 80px;
+        padding-right: 20px;    
     }
+    
     
     .popup .popuptext {
         visibility: hidden;
