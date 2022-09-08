@@ -481,7 +481,6 @@ main figure video {
     .name2 {
         padding-top: 30px;
         padding-left: 10px;
-        padding-right: 100px;
         font:normal 50px "Libre Barcode 39 Text";
     }
     .name {
@@ -489,6 +488,7 @@ main figure video {
         color: rgb(25, 154, 209);
         padding-left: 20px;
         padding-right: 20px;
+        line-break: auto;
     }
     
     .popup .popuptext {
